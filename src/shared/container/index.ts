@@ -11,16 +11,15 @@ import OrdersRepository from '@modules/orders/infra/typeorm/repositories/OrdersR
 
 container.registerSingleton<ICustomersRepository>(
   'CustomersRepository',
-  CustomersRepository
+  CustomersRepository,
 );
 
 container.registerSingleton<IProductsRepository>(
   'ProductsRepository',
-  ProductsRepository
-)
+  ProductsRepository,
+);
 
 container.registerSingleton<IOrdersRepository>(
   'OrdersRepository',
-  OrdersRepository
-)
-
+  OrdersRepository,
+);
