@@ -47,9 +47,11 @@ class CreateOrderService {
       );
 
       if (!existentProduct) {
-        throw new AppError('Invalid Product.');
+        throw new AppError(`Could not find product with id ${product.id}.`);
       } else if (existentProduct.quantity < product.quantity) {
-        throw new AppError('Insufficient product amount.');
+        throw new AppError(
+          `Cannot order product ${product.id} with amount ${product.quantity}`,
+        );
       }
 
       const orderProductQuantity = product.quantity;
